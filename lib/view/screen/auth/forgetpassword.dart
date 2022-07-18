@@ -13,8 +13,9 @@ class Forgetpassword extends StatelessWidget {
   Widget build(BuildContext context) {
     ForgetPasswordimp controller = Get.put(ForgetPasswordimp());
     return Scaffold(
+      backgroundColor: AppColor.bg,
       body: Form(
-        key: controller.goTverfiy(),
+        key: controller.formstate,
         child: Container(
             padding: const EdgeInsets.all(15),
             child: ListView(

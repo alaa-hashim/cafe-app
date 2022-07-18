@@ -45,23 +45,29 @@ class _LoginState extends State<Login> {
                           style: Theme.of(context).textTheme.headline1,
                         ),
                       ),
-                      Custextfrom(
-                        hinttext: 'Email',
-                        iconData: Icons.email,
-                        mycontroller: controller.email,
-                        validator: (val) {
-                          return inputvalidater(val!, 5, 100, "email");
-                        },
-                        isnumber: false,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Custextfrom(
+                          hinttext: 'Email',
+                          iconData: Icons.email,
+                          mycontroller: controller.email,
+                          validator: (val) {
+                            return inputvalidater(val!, 5, 100, "email");
+                          },
+                          isnumber: false,
+                        ),
                       ),
-                      Custextfrom(
-                        hinttext: 'Password',
-                        iconData: Icons.password_outlined,
-                        mycontroller: controller.password,
-                        validator: (val) {
-                          return inputvalidater(val!, 5, 100, "password");
-                        },
-                        isnumber: false,
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Custextfrom(
+                          hinttext: 'Password',
+                          iconData: Icons.password_outlined,
+                          mycontroller: controller.password,
+                          validator: (val) {
+                            return inputvalidater(val!, 5, 100, "password");
+                          },
+                          isnumber: false,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -87,7 +93,7 @@ class _LoginState extends State<Login> {
                           height: 55,
                           child: MaterialButton(
                             onPressed: () {
-                              controller.goToSignUp();
+                              controller.goTbottomBar();
                             },
                             textColor: AppColor.white,
                             child: const Text(

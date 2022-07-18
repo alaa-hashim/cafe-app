@@ -12,16 +12,8 @@ import 'package:get/get.dart';
 
 import '../../core/constant/color.dart';
 
-class Navr extends StatefulWidget {
+class Navr extends GetView<BottomNavigationBarContorller> {
   const Navr({Key? key}) : super(key: key);
-
-  @override
-  _NavrState createState() => _NavrState();
-}
-
-class _NavrState extends State<Navr> {
-  int pageindex = 0;
-  List<Widget> pagelist = <Widget>[];
 
   @override
   Widget build(BuildContext context) {
@@ -45,9 +37,7 @@ class _NavrState extends State<Navr> {
             selectedFontSize: 15,
             unselectedItemColor: const Color(0xffA7B99E),
             unselectedLabelStyle: const TextStyle(color: Colors.black),
-            onTap: (value) {
-              controller.changeTabindex;
-            },
+            onTap: controller.changeTabindex,
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.home_filled),
