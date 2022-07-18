@@ -13,7 +13,7 @@ class Resetpassword extends StatelessWidget {
     ResetPasswrodControllerimp controller =
         Get.put(ResetPasswrodControllerimp());
     return Scaffold(
-      backgroundColor: AppColor.bg,
+      backgroundColor: AppColor.lightgray,
       body: Form(
         key: controller.goToLogin(),
         child: Container(

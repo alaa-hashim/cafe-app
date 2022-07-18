@@ -14,6 +14,7 @@ class Signup extends StatelessWidget {
   Widget build(BuildContext context) {
     SignUpControllerimp controller = Get.put(SignUpControllerimp());
     return Scaffold(
+      backgroundColor: AppColor.bg,
       body: WillPopScope(
         onWillPop: appExit,
         child: Container(
@@ -30,41 +31,53 @@ class Signup extends StatelessWidget {
                     textAlign: TextAlign.left,
                     style: Theme.of(context).textTheme.headline1,
                   ),
-                  Custextfrom(
-                    hinttext: 'Username',
-                    iconData: Icons.person,
-                    mycontroller: controller.username,
-                    validator: (val) {
-                      return inputvalidater(val!, 3, 100, "username");
-                    },
-                    isnumber: false,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Custextfrom(
+                      hinttext: 'Username',
+                      iconData: Icons.person,
+                      mycontroller: controller.username,
+                      validator: (val) {
+                        return inputvalidater(val!, 3, 100, "username");
+                      },
+                      isnumber: false,
+                    ),
                   ),
-                  Custextfrom(
-                    hinttext: 'Email',
-                    iconData: Icons.email,
-                    mycontroller: controller.email,
-                    validator: (val) {
-                      return inputvalidater(val!, 5, 100, "email");
-                    },
-                    isnumber: false,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Custextfrom(
+                      hinttext: 'Email',
+                      iconData: Icons.email,
+                      mycontroller: controller.email,
+                      validator: (val) {
+                        return inputvalidater(val!, 5, 100, "email");
+                      },
+                      isnumber: false,
+                    ),
                   ),
-                  Custextfrom(
-                    hinttext: 'Enter your phone',
-                    iconData: Icons.call,
-                    mycontroller: controller.phone,
-                    validator: (val) {
-                      return inputvalidater(val!, 5, 15, "phone");
-                    },
-                    isnumber: true,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Custextfrom(
+                      hinttext: 'Enter your phone',
+                      iconData: Icons.call,
+                      mycontroller: controller.phone,
+                      validator: (val) {
+                        return inputvalidater(val!, 5, 15, "phone");
+                      },
+                      isnumber: true,
+                    ),
                   ),
-                  Custextfrom(
-                    hinttext: 'Password',
-                    iconData: Icons.lock_clock_outlined,
-                    mycontroller: controller.password,
-                    validator: (val) {
-                      return inputvalidater(val!, 6, 100, "password");
-                    },
-                    isnumber: false,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Custextfrom(
+                      hinttext: 'Password',
+                      iconData: Icons.lock_clock_outlined,
+                      mycontroller: controller.password,
+                      validator: (val) {
+                        return inputvalidater(val!, 6, 100, "password");
+                      },
+                      isnumber: false,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),

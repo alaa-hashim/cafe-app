@@ -8,6 +8,7 @@ abstract class LoginController extends GetxController {
   login();
   goToSignUp();
   goTofrogetpassword();
+  goTbottomBar();
 }
 
 class LoginControllerimp extends LoginController {
@@ -45,5 +46,10 @@ class LoginControllerimp extends LoginController {
   @override
   goTofrogetpassword() {
     Get.offNamed(AppRoute.frogetpassword);
+  }
+
+  @override
+  goTbottomBar() {
+    Get.offNamed(AppRoute.bottomNavigationBar);
   }
 }
