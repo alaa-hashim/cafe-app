@@ -13,7 +13,7 @@ inputvalidater(String val, int max, int min, String type) {
   }
   if (type == "phone") {
     if (!GetUtils.isPhoneNumber(val)) {
-      return " Not vaild phonenumber";
+      return " Not vaild phone number";
     }
   }
   if (val.isEmpty) {

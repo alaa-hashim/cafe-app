@@ -8,4 +8,5 @@ class AppRoute {
   static const String successpage = "/successpage";
   static const String onboadring = "/onboadring";
   static const String bottomNavigationBar = "/bottomNavigationBar";
+  static const String homepage = "/homepage";
 }

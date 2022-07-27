@@ -8,6 +8,25 @@ class Myservices extends GetxService {
     return this;
   }
 
+  storeUser(user) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('user', user);
+  }
+
+  getuser() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getString(
+      'user',
+    );
+  }
+
+  removeuser(user) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.remove(
+      'user',
+    );
+  }
+
   initialServices() async {
     await Get.putAsync(() => Myservices().init());
   }

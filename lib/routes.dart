@@ -6,6 +6,7 @@ import 'package:cafe_app/view/screen/auth/resstpassword.dart';
 import 'package:cafe_app/view/screen/auth/signup.dart';
 import 'package:cafe_app/view/screen/auth/successpage.dart';
 import 'package:cafe_app/view/screen/auth/verfiycode.dart';
+import 'package:cafe_app/view/screen/homepage.dart';
 import 'package:cafe_app/view/screen/lang.dart';
 import 'package:cafe_app/view/screen/navbarscreen.dart';
 import 'package:cafe_app/view/screen/onboarding.dart';
@@ -41,4 +42,8 @@ List<GetPage<dynamic>>? routes = [
       name: AppRoute.bottomNavigationBar,
       page: () => const Navr(),
       binding: BottomNavigationBinding()),
+  GetPage(
+    name: AppRoute.homepage,
+    page: () => const Home(),
+  )
 ];

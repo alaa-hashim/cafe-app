@@ -1,12 +1,20 @@
 // ignore_for_file: file_names, avoid_print
 
+import 'dart:convert';
+
 import 'package:cafe_app/core/constant/routes.dart';
+import 'package:cafe_app/core/services/remoteservices.dart';
+import 'package:cafe_app/core/services/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 abstract class SignUpController extends GetxController {
+  var isLoading = true.obs;
   signup();
   goToLogin();
+  checksignup();
+  register();
+  Myservices myServices = Get.find();
 }
 
 class SignUpControllerimp extends SignUpController {
@@ -16,6 +24,8 @@ class SignUpControllerimp extends SignUpController {
   late TextEditingController password;
   late TextEditingController username;
   late TextEditingController phone;
+  late TextEditingController firstname;
+  late TextEditingController lastname;
   @override
   // ignore: non_constant_identifier_names
   goToLogin() {
@@ -39,6 +49,8 @@ class SignUpControllerimp extends SignUpController {
     password = TextEditingController();
     username = TextEditingController();
     phone = TextEditingController();
+    firstname = TextEditingController();
+    lastname = TextEditingController();
     super.onInit();
   }
 
@@ -48,6 +60,45 @@ class SignUpControllerimp extends SignUpController {
     password.dispose();
     username.dispose();
     phone.dispose();
+    firstname.dispose();
+    lastname.dispose();
     super.dispose();
+  }
+
+  @override
+  checksignup() {
+    //
+    if (username.text.isEmpty) {
+      Get.snackbar("Error", "username is required");
+    }
+    if (username.text.length < 3) {
+      Get.snackbar("Error", "username most be more then 3");
+    } else {
+      Get.showOverlay(
+          asyncFunction: () => register(),
+          loadingWidget: const Center(
+            child: CircularProgressIndicator(),
+          ));
+    }
+  }
+
+  @override
+  register() async {
+    try {
+      var respone = await RemoteServices.client
+          .post(Uri.parse('http://10.39.1.27/alaa/auth/signup.php'), body: {
+        "username": username.text,
+        "firstname": firstname.text,
+        "lastname": lastname.text,
+        "email": email.text,
+        "password": password.text,
+        "phone": phone.text,
+      });
+      var res = await jsonDecode(respone.body);
+      if (res['success']) {
+        Get.snackbar("Success", res['message'], backgroundColor: Colors.green);
+        Get.offNamed(AppRoute.login);
+      }
+    } finally {}
   }
 }

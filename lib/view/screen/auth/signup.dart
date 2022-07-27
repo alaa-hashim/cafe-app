@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:cafe_app/controller/auth/Sign_up_controller.dart';
 import 'package:cafe_app/core/constant/color.dart';
 import 'package:cafe_app/core/functions/appexit.dart';
@@ -17,145 +19,174 @@ class Signup extends StatelessWidget {
       backgroundColor: AppColor.bg,
       body: WillPopScope(
         onWillPop: appExit,
-        child: Container(
-            padding: const EdgeInsets.all(15),
-            child: Form(
-              key: controller.formstate,
-              child: ListView(
-                children: [
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  Text(
-                    "Create your Account",
-                    textAlign: TextAlign.left,
-                    style: Theme.of(context).textTheme.headline1,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Custextfrom(
-                      hinttext: 'Username',
-                      iconData: Icons.person,
-                      mycontroller: controller.username,
-                      validator: (val) {
-                        return inputvalidater(val!, 3, 100, "username");
-                      },
-                      isnumber: false,
+        child: GetBuilder<SignUpControllerimp>(builder: (controller) {
+          return Container(
+              padding: const EdgeInsets.all(15),
+              child: Form(
+                key: controller.formstate,
+                child: ListView(
+                  children: [
+                    const SizedBox(
+                      height: 50,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Custextfrom(
-                      hinttext: 'Email',
-                      iconData: Icons.email,
-                      mycontroller: controller.email,
-                      validator: (val) {
-                        return inputvalidater(val!, 5, 100, "email");
-                      },
-                      isnumber: false,
+                    Text(
+                      "Create your Account",
+                      textAlign: TextAlign.left,
+                      style: Theme.of(context).textTheme.headline1,
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Custextfrom(
-                      hinttext: 'Enter your phone',
-                      iconData: Icons.call,
-                      mycontroller: controller.phone,
-                      validator: (val) {
-                        return inputvalidater(val!, 5, 15, "phone");
-                      },
-                      isnumber: true,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Custextfrom(
-                      hinttext: 'Password',
-                      iconData: Icons.lock_clock_outlined,
-                      mycontroller: controller.password,
-                      validator: (val) {
-                        return inputvalidater(val!, 6, 100, "password");
-                      },
-                      isnumber: false,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                          color: AppColor.primaryColor,
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      width: 230,
-                      height: 55,
-                      child: MaterialButton(
-                        onPressed: () {
-                          controller.signup();
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Custextfrom(
+                        hinttext: 'Username',
+                        iconData: Icons.person,
+                        mycontroller: controller.username,
+                        validator: (val) {
+                          return inputvalidater(val!, 3, 100, "username");
                         },
-                        textColor: AppColor.white,
-                        child: const Text("Register"),
+                        isnumber: false,
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SignupButton(
-                      onTap: () {
-                        controller.goToLogin();
-                      },
-                      textone: 'Already have account  ',
-                      texttwo: 'Login',
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Custextfrom(
+                        hinttext: 'Username',
+                        iconData: Icons.person,
+                        mycontroller: controller.firstname,
+                        validator: (val) {
+                          return inputvalidater(val!, 3, 100, "username");
+                        },
+                        isnumber: false,
+                      ),
                     ),
-                  ),
-                  const Divider(
-                    thickness: 1,
-                    color: AppColor.lightgray,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Coutnue with Accounts ",
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyText1,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Custextfrom(
+                        hinttext: 'Username',
+                        iconData: Icons.person,
+                        mycontroller: controller.lastname,
+                        validator: (val) {
+                          return inputvalidater(val!, 3, 100, "username");
+                        },
+                        isnumber: false,
+                      ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          decoration: const BoxDecoration(
-                              color: AppColor.lightred,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          width: 150,
-                          height: 55,
-                          child: MaterialButton(
-                            onPressed: () {},
-                            textColor: AppColor.red,
-                            child: const Text("GOOGLE"),
-                          ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Custextfrom(
+                        hinttext: 'Email',
+                        iconData: Icons.email,
+                        mycontroller: controller.email,
+                        validator: (val) {
+                          return inputvalidater(val!, 5, 100, "email");
+                        },
+                        isnumber: false,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Custextfrom(
+                        hinttext: 'Enter your phone',
+                        iconData: Icons.call,
+                        mycontroller: controller.phone,
+                        validator: (val) {
+                          return inputvalidater(val!, 5, 15, "phone");
+                        },
+                        isnumber: true,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Custextfrom(
+                        hinttext: 'Password',
+                        iconData: Icons.lock_clock_outlined,
+                        mycontroller: controller.password,
+                        validator: (val) {
+                          return inputvalidater(val!, 6, 100, "password");
+                        },
+                        isnumber: false,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: const BoxDecoration(
+                            color: AppColor.primaryColor,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        width: 230,
+                        height: 55,
+                        child: MaterialButton(
+                          onPressed: () {
+                            Future.delayed(Duration.zero, () {
+                              controller.checksignup();
+                            });
+                          },
+                          textColor: AppColor.white,
+                          child: const Text("Register"),
                         ),
-                        Container(
-                          decoration: const BoxDecoration(
-                              color: AppColor.lightblue,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
-                          width: 150,
-                          height: 55,
-                          child: MaterialButton(
-                            onPressed: () {},
-                            textColor: AppColor.blue,
-                            child: const Text("FACEBOOK"),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  )
-                ],
-              ),
-            )),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: SignupButton(
+                        onTap: () {
+                          controller.goToLogin();
+                        },
+                        textone: 'Already have account  ',
+                        texttwo: 'Login',
+                      ),
+                    ),
+                    const Divider(
+                      thickness: 1,
+                      color: AppColor.lightgray,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        "Coutnue with Accounts ",
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyText1,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            decoration: const BoxDecoration(
+                                color: AppColor.lightred,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            width: 150,
+                            height: 55,
+                            child: MaterialButton(
+                              onPressed: () {},
+                              textColor: AppColor.red,
+                              child: const Text("GOOGLE"),
+                            ),
+                          ),
+                          Container(
+                            decoration: const BoxDecoration(
+                                color: AppColor.lightblue,
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                            width: 150,
+                            height: 55,
+                            child: MaterialButton(
+                              onPressed: () {},
+                              textColor: AppColor.blue,
+                              child: const Text("FACEBOOK"),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ));
+        }),
       ),
     );
   }
